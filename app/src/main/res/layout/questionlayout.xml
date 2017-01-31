@@ -13,40 +13,48 @@
         android:id="@+id/question"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.3"
+        android:layout_weight="0.2"
         android:gravity="center"
         />
 
-    <Button
-        android:id="@+id/a1"
-        android:text="Answer1"
+    <RadioGroup
+        android:id="@+id/rg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/question"
-        android:layout_weight="1.0"/>
+        android:layout_weight="1.0">
+
+        <RadioButton
+            android:text="Question 1"
+            android:id="@+id/r1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/r2"
+            android:text="Question 2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/r3"
+            android:text="Question 3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RadioButton
+            android:id="@+id/r4"
+            android:text="Question 4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
 
     <Button
-        android:id="@+id/a2"
-        android:text="Answer2"
+        android:enabled="false"
+        android:id="@+id/submit"
+        android:text="Submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/a1"
-        android:layout_weight="1.0"/>
-
-    <Button
-        android:id="@+id/a3"
-        android:text="Answer3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/a2"
-        android:layout_weight="1.0"/>
-
-    <Button
-        android:id="@+id/a4"
-        android:text="Answer4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/a3"
-        android:layout_weight="1.0"/>
+        android:layout_gravity="bottom"
+        android:layout_weight="0.15"
+        android:onClick="onClick"/>
 
 </LinearLayout>

@@ -11,7 +11,7 @@ public class Quiz {
     public String title;
     public String desc;
     public ArrayList<Question> content;
-    private int completed;
+    public int completed;
     public int correct;
 
     public Quiz(int n, String title, String desc){

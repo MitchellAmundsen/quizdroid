@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                 String itemValue = parent.getItemAtPosition(position).toString().trim();
 
                 Intent intent = new Intent(MainActivity.this, Overview.class);
-                intent.putExtra("Catergory", itemValue);
+                intent.putExtra("Category", itemValue);
                 startActivity(intent);
             }
         });
