@@ -18,6 +18,7 @@
         <activity android:name=".Overview" />
         <activity android:name=".QuestionScreen" />
         <activity android:name=".ResponseScreen" />
+        <activity android:name=".MainView"></activity>
     </application>
 
 </manifest>

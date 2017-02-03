@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String itemValue = parent.getItemAtPosition(position).toString().trim();
 
-                Intent intent = new Intent(MainActivity.this, Overview.class);
+                Intent intent = new Intent(MainActivity.this, MainView.class);
                 intent.putExtra("Category", itemValue);
                 startActivity(intent);
             }

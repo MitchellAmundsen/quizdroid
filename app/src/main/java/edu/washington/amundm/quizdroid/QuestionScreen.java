@@ -34,7 +34,6 @@ public class QuestionScreen extends AppCompatActivity{
         r3.setText(current.a3);
         r4.setText(current.a4);
 
-        TextView question = (TextView)findViewById(R.id.question);
         submit = (Button)findViewById(R.id.submit);
 
         RadioGroup r = (RadioGroup) findViewById(R.id.rg);
