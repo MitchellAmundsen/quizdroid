@@ -129,8 +129,8 @@ public class ResponseScreenFragment extends Fragment {
         TextView correct = (TextView)getView().findViewById(R.id.correct);
         TextView count = (TextView)getView().findViewById(R.id.count);
 
-        String correctcount = "You have scored " + Overview.q.correct + " out of " +
-                Overview.q.completed + " correct.";
+        String correctcount = "You have scored " + MainView.q.correct + " out of " +
+                MainView.q.completed + " correct.";
 
         answer.setText(currentQ.response);
         correct.setText(currentQ.correct);

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.app.FragmentManager;
 
 public class MainView extends AppCompatActivity {
-    Quiz q;
+    public static Quiz q;
     Button next;
     boolean isQuestion;
     boolean isFinished;
@@ -36,6 +36,8 @@ public class MainView extends AppCompatActivity {
                     currentQS = QuestionScreenFragment.newInstance(now.a1,
                             now.a2, now.a3, now.a4, now.q);
                     currentran.replace(R.id.placeholder, currentQS);
+                    currentran.setCustomAnimations(R.animator.enter_from_left,
+                            R.animator.exit_to_right);
                     currentran.commit();
                     next.setText("Next");
                 } else if(isQuestion){
@@ -48,6 +50,8 @@ public class MainView extends AppCompatActivity {
                     ResponseScreenFragment rs = ResponseScreenFragment.newInstance(
                             now.response, now.correct, correctcount);
                     currenttran.replace(R.id.placeholder, rs);
+                    currenttran.setCustomAnimations(R.animator.enter_from_right,
+                            R.animator.exit_to_left);
                     currenttran.commit();
                     if(q.content.size() == q.completed){
                         next.setText("Finish");
@@ -72,6 +76,7 @@ public class MainView extends AppCompatActivity {
         FragmentTransaction tx = fm.beginTransaction();
         tx.replace(R.id.placeholder, o);
         tx.commit();
+        next.setText("Begin");
         isQuestion = false;
     }
 }
