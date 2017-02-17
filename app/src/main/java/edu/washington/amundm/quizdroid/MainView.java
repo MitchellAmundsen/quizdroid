@@ -6,11 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
-import android.widget.TextView;
 import android.app.FragmentManager;
 
 public class MainView extends AppCompatActivity {
-    public static Quiz q;
+    public static Topic q;
     Button next;
     boolean isQuestion;
     boolean isFinished;
@@ -65,10 +64,11 @@ public class MainView extends AppCompatActivity {
             }
         });
 
+        QuizApp app = new QuizApp();
         Intent intent = getIntent();
-        String topic = (String)intent.getExtras().get("Category");
-        String description = "This is the " + topic + " quiz";
-        q = new Quiz(5, topic, description);
+        int index = (int)intent.getExtras().get("Category");
+        q = app.getRepository().getTopics().get(index);
+        String description = q.lDesc;
         String qCount = "There are " + q.content.size() + " questions in this quiz.";
 
         OverviewFragment o = OverviewFragment.newInstance(description, qCount);

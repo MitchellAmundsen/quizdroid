@@ -7,7 +7,6 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -123,7 +122,7 @@ public class ResponseScreenFragment extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    public void changeR(Quiz current, Question currentQ){;
+    public void changeR(Topic current, Question currentQ){;
 
         TextView answer = (TextView)getView().findViewById(R.id.answer);
         TextView correct = (TextView)getView().findViewById(R.id.correct);
