@@ -8,7 +8,8 @@ import android.widget.ListView;
 import android.view.View;
 import android.content.Intent;
 import java.util.List;
-import java.util.ArrayList;
+import java.net.URL;
+import java.io.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,11 +18,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         ListView list = (ListView)findViewById(R.id.topiclist);
+
+        //String jstring = getJSON("http://tednewardsandbox.site44.com/questions.json");
+        //outputJSON(jstring);
 
         QuizApp app = new QuizApp();
         topics = app.getRepository().getTopics();
@@ -49,5 +52,39 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /*
+    private String getJSON(String site){
+        try {
+            URL request = new URL(site);
+             InputStream is = request.openStream();
+            InputStreamReader isr = new InputStreamReader(is);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuffer buffer = new StringBuffer();
+            char[] chars = new char[1024];
+            int read;
+            while((read = br.read(chars)) != -1){
+                buffer.append(chars, 0, read);
+            }
+            br.close();
+            return buffer.toString();
+        }catch (java.net.MalformedURLException e) {
+            System.out.println("exception caught: " + e);
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+        // will never hit
+        return null;
+    }
+
+    private void outputJSON(String j){
+        try {
+            PrintWriter writer = new PrintWriter("topic_store.txt");
+            writer.println(j);
+            writer.close();
+        } catch(IOException e) {
+            System.out.println(e);
+        }
+    }
+    */
 
 }
